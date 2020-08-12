@@ -1,9 +1,6 @@
 const connection = require("../db/mysql_connection");
-const ErrorResponse = require("../utils/errorResponse");
 const validator = require("validator");
-const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const crypto = require("crypto");
 
 // @desc    할일 목록 불러오기
 // @URL   GET /api/v1/todo

@@ -3,21 +3,16 @@ const dotenv = require("dotenv");
 dotenv.config({ path: "./config/config.env" });
 const morgan = require("morgan");
 
-
-const todo = require("./routes/todo");
+const users = require("./routes/users");
+const rentalj = require("./routes/rental");
 
 const app = express();
 
 app.use(express.json());
 
-app.use(morgan("combined"));
+app.use(morgan("common"));
 
-app.use("/api/v1/todo", todo);
-
-
+app.use("/api/v1/booksuserj", users);
+app.use("/api/v1/booksrentalj", rentalj);
 const PORT = process.env.PORT || 5551;
-
-app.listen(
-  PORT,
-  console.log(`Server running in ${process.env.NODE_ENV}mode on port ${PORT}`)
-);
+app.listen(PORT, console.log("JYP SERVER"));
